@@ -23,7 +23,7 @@ def okay(request):
     return HttpResponse('pretend-binary-data-here', content_type='image/jpeg')
 
 urlpatterns = [
-    path('favicon.ico', okay),
+    # path('favicon.ico', okay),
     path("admin/", admin.site.urls),
     path("",include("Visualization.urls"))
 ]
