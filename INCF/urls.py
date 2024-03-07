@@ -29,3 +29,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("",views.homepage,name="homepage"),
 ]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
