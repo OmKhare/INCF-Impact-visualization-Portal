@@ -19,13 +19,13 @@ def home(request):
     return render(request,"home.html")
 
 def homepage(request):
-    organizations=Organization.objects.all()
+    # organizations=Organization.objects.all()
     # urls=list(organizations.values_list("url", flat = True))
     # ingest(urls)
-    urls=list(organizations.values_list("impact", flat = True))
-    impact=calculator(urls)
-    print(type(impact))
-    return render(request,"newpage.html",{"organization":organizations,"impact":impact})
+    # urls=list(organizations.values_list("impact", flat = True))
+    # impact=calculator(urls)
+    # print(type(impact))
+    return render(request,"newpage.html")
 
 def organization(request):
     print("ji")
