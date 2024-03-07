@@ -97,7 +97,7 @@ def fill_db(org_name):
     # result = qa.run(query)
     query2= f"Give the description the Required skills, domain and subdomain of {org_name} in dictionary format"
     _input = prompt.format_prompt(query=query2)
-    result2 = qa.invoke(_input.to_string())
+    result2 = qa.run(_input.to_string())
     # print("hhi")
     # print(result)
     print(result2)
