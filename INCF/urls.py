@@ -18,6 +18,8 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.http import HttpResponse
+from Visualization import views
+
 
 def okay(request):
     return HttpResponse('pretend-binary-data-here', content_type='image/jpeg')
@@ -25,7 +27,5 @@ def okay(request):
 urlpatterns = [
     # path('favicon.ico', okay),
     path("admin/", admin.site.urls),
-    path("",include("Visualization.urls"))
+    path("",views.homepage,name="homepage"),
 ]
-
-urlpatterns +=  static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
