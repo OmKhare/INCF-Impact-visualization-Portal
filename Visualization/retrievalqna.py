@@ -1,13 +1,13 @@
-from langchain.document_loaders import UnstructuredURLLoader
+from langchain_community.document_loaders import UnstructuredURLLoader
 from langchain.text_splitter import CharacterTextSplitter
-from langchain.embeddings import CohereEmbeddings
-from langchain.vectorstores import Chroma
+from langchain_community.embeddings import CohereEmbeddings
+from langchain_community.vectorstores import Chroma
 from langchain.chains import RetrievalQA
-from langchain.llms import Cohere
-from langchain.document_loaders import PyPDFLoader
+from langchain_community.llms import Cohere
+from langchain_community.document_loaders import PyPDFLoader
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
-from langchain import PromptTemplate
+from langchain.prompts import PromptTemplate
 import json
 from langchain_core.pydantic_v1 import BaseModel, Field, validator
 
@@ -97,7 +97,7 @@ def fill_db(org_name):
     # result = qa.run(query)
     query2= f"Give the description the Required skills, domain and subdomain of {org_name} in dictionary format"
     _input = prompt.format_prompt(query=query2)
-    result2 = qa.run(_input.to_string())
+    result2 = qa.invoke(_input.to_string())
     # print("hhi")
     # print(result)
     print(result2)
