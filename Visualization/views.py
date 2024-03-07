@@ -45,25 +45,25 @@ def organization(request):
 
 responses={}
 
-def chatbot(request):
-    global responses
-    if request.method=="POST":
-        query=request.POST["query"]
-        organization=Organization.objects.all()
-        # urls=list(organization.values_list("url", flat = True))
-        answer=chat(query)
-        for i in answer["source_documents"]:
-            source=i.metadata["source"]
-            break
-        answer["source"]=source
+# def chatbot(request):
+#     global responses
+#     if request.method=="POST":
+#         query=request.POST["query"]
+#         organization=Organization.objects.all()
+#         # urls=list(organization.values_list("url", flat = True))
+#         answer=chat(query)
+#         for i in answer["source_documents"]:
+#             source=i.metadata["source"]
+#             break
+#         answer["source"]=source
 
-        responses[query]=answer
-        print(responses[query])
+#         responses[query]=answer
+#         print(responses[query])
        
 
-        return render(request,"chatbot.html",{"responses":responses,"source":source})
-    responses={}
-    return render(request,"chatbot.html")
+#         return render(request,"chatbot.html",{"responses":responses,"source":source})
+#     responses={}
+#     return render(request,"chatbot.html")
 
 def total_impact(request):
     organization=Organization.objects.all()
