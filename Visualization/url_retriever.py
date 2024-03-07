@@ -1,9 +1,9 @@
-from langchain.document_loaders import UnstructuredURLLoader
-from langchain.embeddings.cohere import CohereEmbeddings
-from langchain.vectorstores import Chroma
+from langchain_community.document_loaders import UnstructuredURLLoader
+from langchain_community.embeddings.cohere import CohereEmbeddings
+from langchain_community.vectorstores import Chroma
 from langchain.chains import RetrievalQA
 import cohere
-from langchain.llms import Cohere
+from langchain_community.llms import Cohere
 import nltk
 import json
 from .serp import stats_finder
