@@ -383,7 +383,7 @@
         <!-- Navigation Bar -->
         <nav>
             <div class="logo">
-                <img src="https://f1000research.s3.amazonaws.com/thumbnails/ab9f89f4-69be-4a6f-bda8-bcdd2e962a09_collection.thumbnail" alt="Logo" style="background-image: none;">
+                {% comment %} <img src="https://f1000research.s3.amazonaws.com/thumbnails/ab9f89f4-69be-4a6f-bda8-bcdd2e962a09_collection.thumbnail" alt="Logo" style="background-image: none;"> {% endcomment %}
             </div>
             <ul class="nav-links">
                 <li><a href="#">About Us</a></li>
@@ -451,7 +451,7 @@
     </div>
 
 </body>
-<script>
+{% comment %} <script>
         function onMenuToggle(e) {
   const navlinks = document.querySelector(".navLinks");
   e.name = e.name === "menu" ? "close" : "menu";
@@ -493,6 +493,6 @@
                 modals[index].style.display = 'none';
             });
         });
-    </script>
+    </script> {% endcomment %}
 
 </html>
