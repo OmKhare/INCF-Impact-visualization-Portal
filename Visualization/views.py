@@ -25,7 +25,7 @@ def homepage(request):
     # urls=list(organizations.values_list("impact", flat = True))
     # impact=calculator(urls)
     # print(type(impact))
-    return render(request,"landing.html")
+    return render(request,"newpage.html")
 
 def organization(request):
     print("ji")
